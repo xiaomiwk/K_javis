@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9B9C74F6-5AA6-44A5-A835-9A814CCA374B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>语音在线服务演示</RootNamespace>
+    <AssemblyName>语音在线服务演示</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>K.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="F主窗口.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F主窗口.Designer.cs">
+      <DependentUpon>F主窗口.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F合成.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="F合成.Designer.cs">
+      <DependentUpon>F合成.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F听写.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="F听写.Designer.cs">
+      <DependentUpon>F听写.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F识别.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="F识别.Designer.cs">
+      <DependentUpon>F识别.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F识别文件.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="F识别文件.Designer.cs">
+      <DependentUpon>F识别文件.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="F主窗口.resx">
+      <DependentUpon>F主窗口.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F合成.resx">
+      <DependentUpon>F合成.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F听写.resx">
+      <DependentUpon>F听写.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F识别.resx">
+      <DependentUpon>F识别.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F识别文件.resx">
+      <DependentUpon>F识别文件.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\语音\语音.csproj">
+      <Project>{b3caab1b-2d49-4ebc-b611-9828f59bc432}</Project>
+      <Name>语音</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="K.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
